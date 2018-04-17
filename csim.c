@@ -50,15 +50,10 @@ int main(int argc, char* argv[])
 		}
 
 		int i = hexStartIndex;
-		int hexEndIndex;
-		for (; i < read; i++) {
-			if (line[i] == ',') {
-				hexEndIndex = i;
-			}
+		strtok(line, " ,");
+		for (; line[i] != ','; i++) {
+
 		}
-
-		// char *hex = substr();
-
 	}
 
 	fclose(fp);
