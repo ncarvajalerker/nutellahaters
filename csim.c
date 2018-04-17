@@ -37,6 +37,28 @@ int main(int argc, char* argv[])
 	while ((read = getline(&line, &len, fp)) != -1) {
 		// read is the length
 		// line is the string line
+		char operation;
+		int hexStartIndex = 2;
+		if (line[0] == ' ') {
+			// THIS SHOULD ALWAYS BE 'M' 'L' or 'S'
+			operation = line[1];
+			hexStartIndex++;
+		}
+		else {
+			// THIS SHOULD ALWAYS BE 'I'
+			operation = line[0];
+		}
+
+		int i = hexStartIndex;
+		int hexEndIndex;
+		for (; i < read; i++) {
+			if (line[i] == ',') {
+				hexEndIndex = i;
+			}
+		}
+
+		// char *hex = substr();
+
 	}
 
 	fclose(fp);
